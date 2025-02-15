@@ -1,23 +1,25 @@
-import { useState } from "react";
+import { useState} from "react";
 import Upload from "../assets/icon.png";
 import { useNavigate } from "react-router-dom";
+// import {useHistory} from "react-router-dom"
 
 const Profilephoto = () => {
     const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
         about: "",
         avatarUrl: "", 
     });
-
+    
+    // const history = useHistory()
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
 
     const handleImageUpload = async (event) => {
         const file = event.target.files[0];
         if (!file) return;
-
         setLoading(true);
         const imageData = new FormData();
         imageData.append("file", file);
@@ -44,7 +46,10 @@ const Profilephoto = () => {
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
+    
+        console.log("Updated Form Data:", formData); // Debugging
     };
+
 
     const validateForm = () => {
         let newErrors = {};
@@ -55,8 +60,10 @@ const Profilephoto = () => {
         return Object.keys(newErrors).length === 0;
     };
 
+    console.log("Form Data before navigating:", formData);
     const handleSubmit = (e) => {
         e.preventDefault();
+
         if (validateForm()) {
             console.log("Form submitted successfully:", formData);
             navigate("/Ticket", { state: formData }); // Pass form data to Ticket page
@@ -97,7 +104,7 @@ const Profilephoto = () => {
                         name="fullName"
                         value={formData.fullName}
                         onChange={handleChange}
-                        className="p-3 bg-[#07373F] border border-lighterDeep bg-deep2 rounded outline-none"
+                        className="p-3 text-white border border-lighterDeep bg-deep2 rounded outline-none"
                     />
                     {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName}</p>}
                 </div>
@@ -109,7 +116,7 @@ const Profilephoto = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="p-3 bg-[#07373F] border border-lighterDeep bg-deep2 rounded outline-none"
+                        className="p-3 bg-deep2 border border-lighterDeep text-white rounded outline-none"
                     />
                     {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                 </div>
@@ -120,7 +127,7 @@ const Profilephoto = () => {
                         name="about"
                         value={formData.about}
                         onChange={handleChange}
-                        className="p-3 bg-[#07373F] border border-lighterDeep bg-deep2 rounded resize-none h-32 outline-none"
+                        className="p-3 bg-deep2 border border-lighterDeep text-white rounded resize-none h-32 outline-none"
                     ></textarea>
                 </div>
 

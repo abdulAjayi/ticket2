@@ -1,8 +1,22 @@
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react"; 
 import backImg from "../assets/Subtract.png";
 import Code from "../assets/Code.png"
 import Nav from "../components/nav";
 
 const Ticket = () => {
+    const location = useLocation()
+    // const formData = location.state.formData
+    const formData = location.state || {}; // Use fallback to prevent undefined errors
+    console.log("Form Data in TicketPage:", formData); // Debugging
+    const navigate = useNavigate()
+    useEffect(() => {
+        if (!location.state) {
+            navigate("/Form"); // Redirect to form if no data is available
+        }
+    }, [location.state, navigate]);
+
+    if (!location.state) return null;
     return (  
         <div className="bg-deep py-16 md:pt-6 px-5 lg:px-28 min-h-screen">
             <Nav />
@@ -37,11 +51,11 @@ const Ticket = () => {
                     <div className="grid grid-cols-2 gap-x-2 border-b border-b-lighterDeep">
                         <div className="flex flex-col p-1 gap-y-1 border-r-lighterDeep border-r">
                             <span className="text-[10px] text-white opacity-[33%] text-start">{"Enter you name"}</span>
-                            <h2 className="text-start font-bold text-[12px] leading-[150%] text-white">{"Avi Chukwu "}</h2>
+                            <h2 className="text-start font-bold text-[12px] leading-[150%] text-white">{formData.fullName}</h2>
                         </div>
                         <div className="flex flex-col p-1">
                             <span className="text-[10px] text-white opacity-[33%] text-start">{"Enter your email *"}</span>
-                            <h2 className="font-bold text-[12px] leading-[150%] text-white text-start">{"User@email.com"}</h2>
+                            <h2 className="font-bold text-[12px] leading-[150%] text-white text-start ">{formData.email}</h2>
                         </div>
                     </div>
 
@@ -64,7 +78,7 @@ const Ticket = () => {
                     
                     <div className="flex  flex-col gap-y-1 p-2 leading-[] text-start">
                         <span className="text-[10px] text-white opacity-[33%]">{"Special request?"}</span>
-                        <p className="text-white text-[10px]">{"Nil ? Or the users sad story they write in there gets this whole space, Max of three rows"}</p>
+                        <p className="text-white text-[10px]">{formData.about}</p>
                     </div>
                 </div>
                     </div>

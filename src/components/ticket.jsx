@@ -1,15 +1,15 @@
 import {useState, useEffect} from "react"
 
+
 const TicketSection = () => {
     const [ticketType, setTicketType] = useState("Free")
     const handleTicketType = (type) => {
         setTicketType(type)
     } 
-    useEffect(() => {
-        localStorage.setItem("ticketTypeSelection", JSON.stringify(ticketType))},
 
 
-    [ticketType]) 
+    useEffect(() => { 
+        localStorage.setItem("ticketTypeSelection", JSON.stringify(ticketType))}, [ticketType]) 
 
     return ( 
         <div className="my-8">
