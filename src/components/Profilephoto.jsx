@@ -74,7 +74,7 @@ const Profilephoto = () => {
         <div>
             <div className="px-6 pt-6 pb-12 border border-halfLight bg-deep2 my-8 rounded-3xl">
                 <p className="mb-3 text-lightGray">Upload Profile Photo (Optional)</p>
-                <div className="flex justify-center bg-lightDeep w-full md:h-[200px] md:relative">
+                <div className="flex justify-center bg-lightDeep w-full md:h-[200px] relative">
                     <div className="w-60 h-60 border-[4px] bg-lighterDeep border-halfLight rounded-[32px] flex flex-col text-lightGray items-center justify-center md:absolute md:top-[-20px] md:bottom-0">
                         {formData.avatarUrl ? (
                             <img src={formData.avatarUrl} alt="Uploaded Avatar" className="w-full h-full object-cover rounded-[32px]" />
@@ -86,7 +86,7 @@ const Profilephoto = () => {
                         )}
                         <input
                             type="file"
-                            className="absolute inset-0 opacity-0 cursor-pointer"
+                            className="absolute opacity-0 cursor-pointer  inset-0"
                             accept="image/*"
                             onChange={handleImageUpload}
                         />
