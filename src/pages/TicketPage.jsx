@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react"; 
+import { useEffect, useState} from "react"; 
 import backImg from "../assets/Subtract.png";
 import Code from "../assets/Code.png"
 import Nav from "../components/nav";
@@ -10,7 +10,15 @@ const Ticket = () => {
     const formData = location.state || {}; // Use fallback to prevent undefined errors
     console.log("Form Data in TicketPage:", formData); // Debugging
     const navigate = useNavigate()
+    
+    
+    const [ticketData, setTicketData] = useState("")
     useEffect(() => {
+        const storedData = localStorage.getItem("ticketTypeSelection");
+        if (storedData) {
+            setTicketData(JSON.parse(storedData)); 
+            console.log(`the stored data: ${storedData}`);
+        }
         if (!location.state) {
             navigate("/Form"); // Redirect to form if no data is available
         }
@@ -63,7 +71,7 @@ const Ticket = () => {
                     <div className="grid grid-cols-2 gap-x-2 border-b border-b-lighterDeep">
                         <div className="flex flex-col p-1 gap-y-1 border-r-lighterDeep border-r">
                             <span className="text-[10px] text-white opacity-[33%] text-start">{"Ticket Type:"}</span>
-                            <h2 className="text-start font-bold text-[12px] leading-[150%] text-white">{"VIP"}</h2>
+                            <h2 className="text-start font-bold text-[12px] leading-[150%] text-white">{ticketData}</h2>
                         </div>
                         <div className="flex flex-col p-1">
                             <span className="text-[10px] text-white opacity-[33%] text-start">{"Ticket for :"}</span>
@@ -102,3 +110,6 @@ const Ticket = () => {
 }
 
 export default Ticket;
+
+
+

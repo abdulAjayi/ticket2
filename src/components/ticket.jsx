@@ -7,11 +7,10 @@ const TicketSection = () => {
         setTicketType(type)
     } 
 
-
     useEffect(() => { 
         localStorage.setItem("ticketTypeSelection", JSON.stringify(ticketType))}, [ticketType]) 
 
-    return ( 
+    return (  
         <div className="my-8">
             <p className="text-lightGray mb-2">{"Select Ticket Type:"}</p>
             
