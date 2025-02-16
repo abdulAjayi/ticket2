@@ -59,21 +59,21 @@ const Ticket = () => {
                     <div className="grid grid-cols-2 gap-x-2 border-b border-b-lighterDeep">
                         <div className="flex flex-col p-1 gap-y-1 border-r-lighterDeep border-r">
                             <span className="text-[10px] text-white opacity-[33%] text-start">{"Enter you name"}</span>
-                            <h2 className="text-start font-bold text-[12px] leading-[150%] text-white">{formData.fullName}</h2>
+                            <h2 className="text-start font-bold text-[12px] leading-[150%] text-white ">{formData.fullName}</h2>
                         </div>
                         <div className="flex flex-col p-1">
                             <span className="text-[10px] text-white opacity-[33%] text-start">{"Enter your email *"}</span>
-                            <h2 className="font-bold text-[12px] leading-[150%] text-white text-start ">{formData.email}</h2>
+                            <h2 className="font-bold text-[12px] leading-[150%] text-white text-start whitespace-nowrap overflow-hidden text-ellipsis inline-block ">{formData.email}</h2>
                         </div>
                     </div>
 
 
                     <div className="grid grid-cols-2 gap-x-2 border-b border-b-lighterDeep">
-                        <div className="flex flex-col p-1 gap-y-1 border-r-lighterDeep border-r">
+                        <div className="flex flex-col p-1 gap-y-1 border-r-lighterDeep border-r ">
                             <span className="text-[10px] text-white opacity-[33%] text-start">{"Ticket Type:"}</span>
-                            <h2 className="text-start font-bold text-[12px] leading-[150%] text-white whitespace-nowrap overflow-hidden text-ellipsis inline-block">{ticketData}</h2>
+                            <h2 className="text-start font-bold text-[12px] leading-[150%] text-white ">{ticketData}</h2>
                         </div>
-                        <div className="flex flex-col p-1">
+                        <div className="flex flex-col p-1 ">
                             <span className="text-[10px] text-white opacity-[33%] text-start">{"Ticket for :"}</span>
                             <h2 className="font-bold text-[12px] leading-[150%] text-white text-start">{"1"}</h2>
                         </div>
