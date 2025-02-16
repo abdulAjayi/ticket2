@@ -66,11 +66,11 @@ const Ticket = () => {
                     <div className="grid grid-cols-2 gap-x-2 border-b border-b-lighterDeep">
                         <div className="flex flex-col p-1 gap-y-1 border-r-lighterDeep border-r">
                             <span className="text-[10px] text-white opacity-[33%] text-start">{"Enter you name"}</span>
-                            <h2 className="text-start font-bold text-[12px] leading-[150%] text-white ">{formData.fullName}</h2>
+                            <h2 className="text-start font-bold text-[12px] leading-[150%] text-white whitespace-nowrap overflow-hidden text-ellipsis inline-block">{formData.fullName}</h2>
                         </div>
                         <div className="flex flex-col p-1">
                             <span className="text-[10px] text-white opacity-[33%] text-start">{"Enter your email *"}</span>
-                            <h2 className="font-bold text-[12px] leading-[150%] text-white text-start whitespace-nowrap overflow-hidden text-ellipsis inline-block ">{formData.email}</h2>
+                            <h2 className="font-bold text-[12px] leading-[150%] text-white text-start whitespace-nowrap overflow-hidden text-ellipsis inline-block">{formData.email}</h2>
                         </div>
                     </div>
 
