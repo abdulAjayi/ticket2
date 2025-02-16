@@ -7,15 +7,10 @@ const Nav = () => {
     return ( 
         <div>
             <div className="bg-deep3 border border-lighterDeep px-4 py-3 md:flex justify-between md:mb-3 items-center rounded-3xl mx-auto hidden bg-opacity-[40%]">
-                <div>
-
-                </div>
-                <div className="flex">
-                    <div className="rounded-full h-3 bg-[052F35] border border-lighterDeep"></div>
-                    <div>
-                        <img src={Upload} alt="" />
-                    </div>
-                </div>
+                
+                
+                <img src={Upload} alt="" />
+                
                 <div className="flex gap-x-4">
                     <Link to="/" className="text-white">Events</Link>
                     <Link to="/form" className="text-lightGray">My Tickets</Link>
