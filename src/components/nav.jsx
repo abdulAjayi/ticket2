@@ -6,7 +6,7 @@ const Nav = () => {
     const Navigate = useNavigate()
     return ( 
         <div>
-            <div className="bg-deep3 border border-lighterDeep px-4 py-3 md:flex justify-between md:mb-3 items-center rounded-3xl mx-auto hidden">
+            <div className="bg-deep3 border border-lighterDeep px-4 py-3 md:flex justify-between md:mb-3 items-center rounded-3xl mx-auto hidden bg-opacity-[40%]">
                 <div>
 
                 </div>
