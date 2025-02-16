@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import {useState} from "react"
+import {useEffect, useState} from "react"
 
 const NumberTicket = () => {
     const [ticketNumber, setTicketNumber] = useState(0)
@@ -7,6 +7,10 @@ const NumberTicket = () => {
         const value = e.target.value
         setTicketNumber(value)
     } 
+    useEffect( () => {
+        const storage = ticketNumber
+        localStorage.setItem("numberTicket", JSON.stringify(storage))
+    })
     const Navigate = useNavigate();
     return (
         <div className="my-8">

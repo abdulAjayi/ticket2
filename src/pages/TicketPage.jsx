@@ -13,8 +13,13 @@ const Ticket = () => {
     
     
     const [ticketData, setTicketData] = useState("")
+    const [ticketNumber, setTicketNumber] = useState("")
     useEffect(() => {
         const storedData = localStorage.getItem("ticketTypeSelection");
+        const storedTicketNumber = localStorage.getItem("numberTicket")
+        if(storedTicketNumber){
+            setTicketNumber(JSON.parse(storedTicketNumber))
+        }
         if (storedData) {
             setTicketData(JSON.parse(storedData)); 
             console.log(`the stored data: ${storedData}`);
@@ -75,7 +80,7 @@ const Ticket = () => {
                         </div>
                         <div className="flex flex-col p-1 ">
                             <span className="text-[10px] text-white opacity-[33%] text-start">{"Ticket for :"}</span>
-                            <h2 className="font-bold text-[12px] leading-[150%] text-white text-start">{"1"}</h2>
+                            <h2 className="font-bold text-[12px] leading-[150%] text-white text-start">{ticketNumber}</h2>
                         </div>
                     </div>
 
