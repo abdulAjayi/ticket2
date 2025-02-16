@@ -101,7 +101,7 @@ const Ticket = () => {
                     <div className="md:grid md:grid-cols-2 gap-x-6">
                 <div className="bg-halfLight rounded-lg py-6 px-3 w-full mt-8"><p className="text-center text-lightGray">{"Download Ticket"}</p></div>
 
-                <div className="rounded-lg py-6 px-3 w-full bg-lightDeep text-halfLight  mt-8 border border-halfLight"><p className="text-center">{"Book Ticket"}</p></div>
+                <div className="rounded-lg py-6 px-3 w-full bg-lightDeep text-halfLight  mt-8 border border-halfLight"><p onClick={() => {navigate("/")}} className="text-center">{"Book Another Ticket"}</p></div>
             </div>
                 
             </div>
