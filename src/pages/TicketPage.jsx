@@ -71,7 +71,7 @@ const Ticket = () => {
                     <div className="grid grid-cols-2 gap-x-2 border-b border-b-lighterDeep">
                         <div className="flex flex-col p-1 gap-y-1 border-r-lighterDeep border-r">
                             <span className="text-[10px] text-white opacity-[33%] text-start">{"Ticket Type:"}</span>
-                            <h2 className="text-start font-bold text-[12px] leading-[150%] text-white">{ticketData}</h2>
+                            <h2 className="text-start font-bold text-[12px] leading-[150%] text-white whitespace-nowrap overflow-hidden text-ellipsis inline-block">{ticketData}</h2>
                         </div>
                         <div className="flex flex-col p-1">
                             <span className="text-[10px] text-white opacity-[33%] text-start">{"Ticket for :"}</span>
