@@ -29,6 +29,8 @@ const Ticket = () => {
         }
     }, [location.state, navigate]);
 
+    const deleteLocalStorage = () => localStorage.clear()
+
     if (!location.state) return null;
     return (  
         <div className="bg-deep py-16 md:pt-6 px-5 lg:px-28 min-h-screen">
@@ -106,7 +108,10 @@ const Ticket = () => {
                     <div className="md:grid md:grid-cols-2 gap-x-6">
                 <div className="bg-halfLight rounded-lg py-6 px-3 w-full mt-8"><p className="text-center text-lightGray">{"Download Ticket"}</p></div>
 
-                <div className="rounded-lg py-6 px-3 w-full bg-lightDeep text-halfLight  mt-8 border border-halfLight"><p onClick={() => {navigate("/")}} className="text-center">{"Book Another Ticket"}</p></div>
+                <div className="rounded-lg py-6 px-3 w-full bg-lightDeep text-halfLight  mt-8 border border-halfLight"><p onClick={() => {
+                    deleteLocalStorage()
+                    navigate("/")
+                    }} className="text-center">{"Book Another Ticket"}</p></div>
             </div>
                 
             </div>
